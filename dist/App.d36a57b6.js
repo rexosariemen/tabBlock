@@ -28285,21 +28285,426 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"components/TabHeader.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var TabHeader = /*#__PURE__*/function (_React$Component) {
+  _inherits(TabHeader, _React$Component);
+
+  var _super = _createSuper(TabHeader);
+
+  function TabHeader() {
+    _classCallCheck(this, TabHeader);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(TabHeader, [{
+    key: "doClick",
+    value: function doClick(index, event) {
+      this.props.click(index);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var activeClass = this.props.activeId;
+      var tabs = this.props.data.map(function (item, index) {
+        return /*#__PURE__*/_react.default.createElement("a", {
+          key: index,
+          className: activeClass === index ? 'active' : ''
+        }, /*#__PURE__*/_react.default.createElement("span", {
+          onClick: _this.doClick.bind(_this, index)
+        }, /*#__PURE__*/_react.default.createElement("span", null, item.name)));
+      });
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "tabs-header"
+      }, tabs);
+    }
+  }]);
+
+  return TabHeader;
+}(_react.default.Component);
+
+var _default = TabHeader;
+/*
+back: &#8963;
+front: &#8250;
+*/
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js"}],"components/MediaComponent.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ImageComponent = ImageComponent;
+exports.ImageModal = ImageModal;
+exports.VideoComponent = VideoComponent;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function ImageComponent(_ref) {
+  var item = _ref.item,
+      onClick = _ref.onClick;
+  // const {item, onClick} = props;
+  return /*#__PURE__*/_react.default.createElement("img", {
+    onClick: onClick,
+    id: "img-item",
+    src: item.image,
+    alt: item.name
+  });
+}
+
+function ImageModal(_ref2) {
+  var item = _ref2.item,
+      onClick = _ref2.onClick;
+  // const { item, onClick } = props;
+  return /*#__PURE__*/_react.default.createElement("div", {
+    onClick: onClick,
+    id: "myModal",
+    className: "modal"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: item.image,
+    alt: item.name,
+    className: "modal-content"
+  }));
+}
+
+function VideoComponent(_ref3) {
+  var item = _ref3.item;
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("video", {
+    width: "320",
+    height: "240",
+    controls: true
+  }, /*#__PURE__*/_react.default.createElement("source", {
+    src: item.video,
+    type: "video/mp4"
+  }), "Your browser does not support the video tag."));
+} // export default ImageComponent;
+},{"react":"../node_modules/react/index.js"}],"components/TabContents.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _MediaComponent = require("./MediaComponent");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var TabContent = /*#__PURE__*/function (_React$Component) {
+  _inherits(TabContent, _React$Component);
+
+  var _super = _createSuper(TabContent);
+
+  function TabContent(props) {
+    var _this;
+
+    _classCallCheck(this, TabContent);
+
+    _this = _super.call(this, props);
+    _this.state = {// modalView: false,
+    };
+    return _this;
+  } // handleClick = () => {
+  //   this.setState({
+  //     modalView: !this.state.modalView,
+  //   })
+  // }
+
+
+  _createClass(TabContent, [{
+    key: "render",
+    value: function render() {
+      var activeClass = this.props.activeId; // let imageModal = this.props.imageModal;
+      // console.log(imageModal)
+
+      var handleClick = this.props.handleClick;
+      var modalView = this.props.modalView;
+      var view; // modalView ? <ImageModal onClick={this.handleClick} /> :
+      // <ImageComponent onClick={this.handleClick} />;
+
+      var content = this.props.data.map(function (item, index) {
+        if (item.image) {
+          // return (
+          // <div key={index}>
+          {
+            /* <div className={'tabs-textItem ' + (activeClass === index ? 'show' : '')} ><p>{item.text}</p></div> */
+          }
+          {
+            /* <span style={modalStyles} id="myModal" className="modal">
+                   <img src={item.image} className="modal-content" id="img01" />
+                 </span> */
+          }
+          {}
+          /* <img onClick={() => this.renderModal(item.image)} id="img-item" src={item.image} alt={item.name}/> */
+          // </div>
+          // <div className={'tabs-textItem ' + (activeClass === index ? 'show' : '')} >
+
+          return /*#__PURE__*/_react.default.createElement("div", {
+            key: index
+          }, modalView ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageModal, {
+            onClick: handleClick,
+            item: item
+          })) : /*#__PURE__*/_react.default.createElement("div", {
+            className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+          }, /*#__PURE__*/_react.default.createElement("p", null, item.text, " ", /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
+            onClick: handleClick,
+            item: item
+          }))); // )
+        } else if (item.video) {
+          return /*#__PURE__*/_react.default.createElement("div", {
+            key: index,
+            className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+          }, /*#__PURE__*/_react.default.createElement("p", null, item.text), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
+            item: item
+          }));
+        }
+
+        return /*#__PURE__*/_react.default.createElement("div", {
+          key: index,
+          className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+        }, /*#__PURE__*/_react.default.createElement("p", null, item.text));
+      });
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "tabs-content"
+      }, content);
+    }
+  }]);
+
+  return TabContent;
+}(_react.default.Component);
+
+var _default = TabContent;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","./MediaComponent":"components/MediaComponent.js"}],"assets/tabsData.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DATA = void 0;
+var DATA = [{
+  name: 'SONNET 36',
+  text: "Let me confess that we two must be twain, Although our undivided loves are one: So shall those blots that do with me remain, Without thy help, by me be borne alone. In our two loves there is but one respect, Though in our lives a separable spite, Which though it alter not love's sole effect, Yet doth it steal sweet hours from love's delight. I may not evermore acknowledge thee, Lest my bewailed guilt should do thee shame,",
+  image: "https://lh3.googleusercontent.com/proxy/-3FbWvXKNiu7V4c5mkAMV6TTqsuy4nRHQ_tWcP2cqhRyT1qv3Z5-yH5EIiOWGyc4QXPbGNDTYEVDE-75DFDFRQaUgzIUw_x2rqn5HLKAVATHMQRoqBaC2qA7zAwh9A"
+}, {
+  name: 'SONNET 90',
+  text: "Then hate me when thou wilt; if ever, now; Now, while the world is bent my deeds to cross, Join with the spite of fortune, make me bow, And do not drop in for an after-loss: Ah! do not, when my heart hath 'scap'd this sorrow, Come in the rearward of a conquer'd woe; Give not a windy night a rainy morrow, To linger out a purpos'd overthrow. If thou wilt leave me, do not leave me last, When other petty griefs have done their spite" // image: "https://www.azquotes.com/picture-quotes/quote-then-hate-me-when-thou-wilt-if-ever-now-william-shakespeare-129-42-86.jpg",
+
+}, {
+  name: 'SONNET 79',
+  text: "Whilst I alone did call upon thy aid, My verse alone had all thy gentle grace; But now my gracious numbers are decay'd, And my sick Muse doth give an other place.I grant, sweet love, thy lovely argument Deserves the travail of a worthier pen; Yet what of thee thy poet doth invent He robs thee of, and pays it thee again.He lends thee virtue, and he stole that word From thy behaviour; beauty doth he give" // image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/09/20/istock-157528129.jpg?w968h681'
+
+}, {
+  name: 'SONNET 144',
+  text: "Two loves I have of comfort and despair, Which like two spirits do suggest me still: The better angel is a man right fair, The worser spirit a woman colour'd ill. To win me soon to hell, my female evil, Tempteth my better angel from my side, And would corrupt my saint to be a devil, Wooing his purity with her foul pride. And whether that my angel be turn'd fiend, Suspect I may, yet not directly tell;",
+  video: "http://techslides.com/demos/sample-videos/small.mp4"
+}, {
+  name: 'ROBERT FROST',
+  text: "Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\n    Then took the other, as just as fair,\n    And having perhaps the better claim,\n    Because it was grassy and wanted wear;\n    Though as for that the passing there\nHad worn them really about the same,\n\n    And both that morning equally lay\nIn leaves no step had trodden black.\n      Oh, I kept the first for another day!\nYet knowing how way leads on to way,\n    I doubted if I should ever come back.\n\nI shall be telling this with a sigh\nSomewhere ages and ages hence:\n      Two roads diverged in a wood, and I\u2014\n    I took the one less traveled by,\n    And that has made all the difference." // image: "https://media-exp1.licdn.com/dms/image/C4D12AQE1xgyQfx7LoA/article-cover_image-shrink_600_2000/0?e=1596672000&v=beta&t=sMqtRxCRMvZk_jYDudH3bko4w0SRy5vHjPvc1wqdYbQ",
+
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}, {
+  name: 'TAB000 LOREM IPSUM',
+  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+}];
+exports.DATA = DATA;
+},{}],"components/Tabs.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _TabHeader = _interopRequireDefault(require("./TabHeader"));
+
+var _TabContents = _interopRequireDefault(require("./TabContents"));
+
+var _tabsData = require("../assets/tabsData");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Tabs = /*#__PURE__*/function (_React$Component) {
+  _inherits(Tabs, _React$Component);
+
+  var _super = _createSuper(Tabs);
+
+  function Tabs() {
+    var _this;
+
+    _classCallCheck(this, Tabs);
+
+    _this = _super.call(this);
+
+    _defineProperty(_assertThisInitialized(_this), "changeTabOnClick", function (index) {
+      _this.setState({
+        activeTab: index
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleClick", function () {
+      _this.setState({
+        modalView: !_this.state.modalView
+      });
+    });
+
+    _this.state = {
+      activeTab: 0,
+      data: _tabsData.DATA,
+      modalView: false
+    };
+    return _this;
+  }
+
+  _createClass(Tabs, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "tabs-body"
+      }, /*#__PURE__*/_react.default.createElement("div", {
+        className: "scrollmenu"
+      }, /*#__PURE__*/_react.default.createElement(_TabHeader.default, {
+        data: this.state.data,
+        click: this.changeTabOnClick,
+        activeId: this.state.activeTab
+      })), /*#__PURE__*/_react.default.createElement(_TabContents.default, {
+        data: this.state.data,
+        activeId: this.state.activeTab,
+        handleClick: this.handleClick,
+        modalView: this.state.modalView
+      }));
+    }
+  }]);
+
+  return Tabs;
+}(_react.default.Component);
+
+;
+var _default = Tabs;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","./TabHeader":"components/TabHeader.js","./TabContents":"components/TabContents.js","../assets/tabsData":"assets/tabsData.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = require("react-dom");
 
+var _Tabs = _interopRequireDefault(require("./components/Tabs"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Hello World!")));
+  return /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Tabs.default, null)));
 };
 
 (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/Tabs":"components/Tabs.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28327,7 +28732,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51098" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50020" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
