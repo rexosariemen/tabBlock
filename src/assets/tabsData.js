@@ -7,12 +7,10 @@ export const DATA = [
   {
     name: 'SONNET 90',
     text: "Then hate me when thou wilt; if ever, now; Now, while the world is bent my deeds to cross, Join with the spite of fortune, make me bow, And do not drop in for an after-loss: Ah! do not, when my heart hath 'scap'd this sorrow, Come in the rearward of a conquer'd woe; Give not a windy night a rainy morrow, To linger out a purpos'd overthrow. If thou wilt leave me, do not leave me last, When other petty griefs have done their spite",
-    // image: "https://www.azquotes.com/picture-quotes/quote-then-hate-me-when-thou-wilt-if-ever-now-william-shakespeare-129-42-86.jpg",
   },
   {
     name: 'SONNET 79',
     text: "Whilst I alone did call upon thy aid, My verse alone had all thy gentle grace; But now my gracious numbers are decay'd, And my sick Muse doth give an other place.I grant, sweet love, thy lovely argument Deserves the travail of a worthier pen; Yet what of thee thy poet doth invent He robs thee of, and pays it thee again.He lends thee virtue, and he stole that word From thy behaviour; beauty doth he give",
-    // image: 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/09/20/istock-157528129.jpg?w968h681'
   },
   {
     name: 'SONNET 144',
@@ -44,7 +42,6 @@ Somewhere ages and ages hence:
       Two roads diverged in a wood, and I—
     I took the one less traveled by,
     And that has made all the difference.`,
-    // image: "https://media-exp1.licdn.com/dms/image/C4D12AQE1xgyQfx7LoA/article-cover_image-shrink_600_2000/0?e=1596672000&v=beta&t=sMqtRxCRMvZk_jYDudH3bko4w0SRy5vHjPvc1wqdYbQ",
   },
   {
     name: 'TAB000 LOREM IPSUM',
