@@ -28363,7 +28363,7 @@ function ImageModal(_ref2) {
 function VideoComponent(_ref3) {
   var item = _ref3.item;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("video", {
-    width: "310",
+    width: "320",
     height: "240",
     controls: true
   }, /*#__PURE__*/_react.default.createElement("source", {
@@ -28446,7 +28446,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DATA = void 0;
+exports.default = void 0;
 var DATA = [{
   name: "SONNET 36",
   text: ["Let me confess that we two must be twain, Although our undivided loves are one: So shall those blots that do with me remain, Without thy help, by me be borne alone. In our two loves there is but one respect, Though in our lives a separable spite Which though it alter not love's sole effect, Yet doth it steal sweet hours from love's delight.", "I may not evermore acknowledge thee, Lest my bewailed guilt should do thee shame"],
@@ -28488,7 +28488,9 @@ var DATA = [{
   name: "LOREM IPSUM",
   text: ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."]
 }];
-exports.DATA = DATA;
+var myJON = JSON.stringify(DATA);
+var _default = myJON;
+exports.default = _default;
 },{}],"components/Tabs.js":[function(require,module,exports) {
 "use strict";
 
@@ -28503,7 +28505,7 @@ var _TabHeader = _interopRequireDefault(require("./TabHeader"));
 
 var _TabContents = _interopRequireDefault(require("./TabContents"));
 
-var _tabsData = require("../assets/tabsData");
+var _tabsData = _interopRequireDefault(require("../assets/tabsData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28557,7 +28559,7 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
 
     _this.state = {
       activeTab: 0,
-      data: _tabsData.DATA,
+      data: JSON.parse(_tabsData.default),
       modalView: false
     };
     return _this;
@@ -28632,7 +28634,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63794" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51990" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
