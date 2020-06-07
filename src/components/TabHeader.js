@@ -1,7 +1,7 @@
 import React from 'react';
 
 class TabHeader extends React.Component {
-  doClick(index, event) {
+  doClick(index) {
     this.props.click(index);
   }
 
@@ -19,10 +19,4 @@ class TabHeader extends React.Component {
     )
   }
 }
-
 export default TabHeader;
-
-/*
-back: &#8963;
-front: &#8250;
-*/
