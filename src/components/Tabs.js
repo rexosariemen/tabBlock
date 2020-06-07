@@ -1,7 +1,7 @@
-import React from 'react';
-import TabHeader from './TabHeader';
-import TabContent from './TabContents';
-import { DATA } from '../assets/tabsData';
+import React from "react";
+import TabHeader from "./TabHeader";
+import TabContent from "./TabContents";
+import { DATA } from "../assets/tabsData";
 
 class Tabs extends React.Component {
   constructor() {
@@ -12,11 +12,11 @@ class Tabs extends React.Component {
       data: DATA,
       modalView: false,
     };
-  };
+  }
 
   changeTabOnClick = (index) => {
     this.setState({
-      activeTab: index
+      activeTab: index,
     });
   };
 
@@ -30,16 +30,20 @@ class Tabs extends React.Component {
     return (
       <div className="tabs-body">
         <div className="scrollmenu">
-          <TabHeader data={this.state.data}
+          <TabHeader
+            data={this.state.data}
             click={this.changeTabOnClick}
-            activeId={this.state.activeTab} />
+            activeId={this.state.activeTab}
+          />
         </div>
-        <TabContent data={this.state.data}
+        <TabContent
+          data={this.state.data}
           activeId={this.state.activeTab}
           handleClick={this.handleClick}
-          modalView={this.state.modalView} />
+          modalView={this.state.modalView}
+        />
       </div>
     );
-  };
-};
+  }
+}
 export default Tabs;

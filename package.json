@@ -1,10 +1,12 @@
 {
   "name": "tab_block",
   "version": "1.0.0",
-  "description": "A Tab block built in ReactJS",
+  "description": "A Tab block built with ReactJS",
   "main": "index.html",
   "scripts": {
     "dev": "parcel src/index.html",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +17,17 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "prettier": "^2.0.5",
     "parcel-bundler": "^1.12.4"
   }
 }

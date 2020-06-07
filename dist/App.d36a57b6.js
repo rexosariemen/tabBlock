@@ -28297,66 +28297,26 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function TabHeader(props) {
+  var doClick = function doClick(index) {
+    props.click(index);
+  };
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-var TabHeader = /*#__PURE__*/function (_React$Component) {
-  _inherits(TabHeader, _React$Component);
-
-  var _super = _createSuper(TabHeader);
-
-  function TabHeader() {
-    _classCallCheck(this, TabHeader);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(TabHeader, [{
-    key: "doClick",
-    value: function doClick(index) {
-      this.props.click(index);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this = this;
-
-      var activeClass = this.props.activeId;
-      var tabs = this.props.data.map(function (item, index) {
-        return /*#__PURE__*/_react.default.createElement("a", {
-          key: index,
-          className: activeClass === index ? 'active' : ''
-        }, /*#__PURE__*/_react.default.createElement("span", {
-          onClick: _this.doClick.bind(_this, index)
-        }, /*#__PURE__*/_react.default.createElement("span", null, item.name)));
-      });
-      return /*#__PURE__*/_react.default.createElement("div", {
-        className: "tabs-header"
-      }, tabs);
-    }
-  }]);
-
-  return TabHeader;
-}(_react.default.Component);
+  var activeClass = props.activeId;
+  var tabs = props.data.map(function (item, index) {
+    return /*#__PURE__*/_react.default.createElement("a", {
+      key: index,
+      className: activeClass === index ? "active" : ""
+    }, /*#__PURE__*/_react.default.createElement("span", {
+      onClick: function onClick() {
+        return doClick(index);
+      }
+    }, /*#__PURE__*/_react.default.createElement("span", null, item.name)));
+  });
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "tabs-header"
+  }, tabs);
+}
 
 var _default = TabHeader;
 exports.default = _default;
@@ -28437,7 +28397,7 @@ function TabContent(props) {
         onClick: handleClick,
         item: item
       })) : /*#__PURE__*/_react.default.createElement("div", {
-        className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+        className: "tabs-textItem " + (activeClass === index ? "show" : "")
       }, /*#__PURE__*/_react.default.createElement("p", null, item.text, " ", /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
         onClick: handleClick,
         item: item
@@ -28445,7 +28405,7 @@ function TabContent(props) {
     } else if (item.video) {
       return /*#__PURE__*/_react.default.createElement("div", {
         key: index,
-        className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+        className: "tabs-textItem " + (activeClass === index ? "show" : "")
       }, /*#__PURE__*/_react.default.createElement("p", null, item.text), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
         item: item
       }));
@@ -28453,7 +28413,7 @@ function TabContent(props) {
 
     return /*#__PURE__*/_react.default.createElement("div", {
       key: index,
-      className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+      className: "tabs-textItem " + (activeClass === index ? "show" : "")
     }, /*#__PURE__*/_react.default.createElement("p", null, item.text));
   });
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -28489,27 +28449,27 @@ var DATA = [{
   name: "ROBERT FROST",
   text: "Two roads diverged in a yellow wood, And sorry I could not travel both And be one traveler, long I stood And looked down one as far as I could To where it bent in the undergrowth; Then took the other, as just as fair, And having perhaps the better claim, Because it was grassy and wanted wear; Though as for that the passing there Had worn them really about the same, And both that morning equally lay In leaves no step had trodden black. Oh, I kept the first for another day! Yet knowing how way leads on to way,I doubted if I should ever come back.  I shall be telling this with a sigh Somewhere ages and ages hence: Two roads diverged in a wood, and I-I took the one less traveled by, And that has made all the difference."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.',
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.",
   video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }];
 exports.DATA = DATA;
 },{}],"components/Tabs.js":[function(require,module,exports) {
@@ -28609,7 +28569,6 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
   return Tabs;
 }(_react.default.Component);
 
-;
 var _default = Tabs;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","./TabHeader":"components/TabHeader.js","./TabContents":"components/TabContents.js","../assets/tabsData":"assets/tabsData.js"}],"App.js":[function(require,module,exports) {
@@ -28627,7 +28586,7 @@ var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Tabs.default, null)));
 };
 
-(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById('root'));
+(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById("root"));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/Tabs":"components/Tabs.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -28656,7 +28615,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50020" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50261" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
