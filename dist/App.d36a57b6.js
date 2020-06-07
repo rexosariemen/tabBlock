@@ -28306,7 +28306,7 @@ function TabHeader(props) {
   var tabs = props.data.map(function (item, index) {
     return /*#__PURE__*/_react.default.createElement("a", {
       key: index,
-      className: activeClass === index ? 'active' : ''
+      className: activeClass === index ? "active" : ""
     }, /*#__PURE__*/_react.default.createElement("span", {
       onClick: function onClick() {
         return doClick(index);
@@ -28397,7 +28397,7 @@ function TabContent(props) {
         onClick: handleClick,
         item: item
       })) : /*#__PURE__*/_react.default.createElement("div", {
-        className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+        className: "tabs-textItem " + (activeClass === index ? "show" : "")
       }, /*#__PURE__*/_react.default.createElement("p", null, item.text, " ", /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
         onClick: handleClick,
         item: item
@@ -28405,7 +28405,7 @@ function TabContent(props) {
     } else if (item.video) {
       return /*#__PURE__*/_react.default.createElement("div", {
         key: index,
-        className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+        className: "tabs-textItem " + (activeClass === index ? "show" : "")
       }, /*#__PURE__*/_react.default.createElement("p", null, item.text), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
         item: item
       }));
@@ -28413,7 +28413,7 @@ function TabContent(props) {
 
     return /*#__PURE__*/_react.default.createElement("div", {
       key: index,
-      className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+      className: "tabs-textItem " + (activeClass === index ? "show" : "")
     }, /*#__PURE__*/_react.default.createElement("p", null, item.text));
   });
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -28449,27 +28449,27 @@ var DATA = [{
   name: "ROBERT FROST",
   text: "Two roads diverged in a yellow wood, And sorry I could not travel both And be one traveler, long I stood And looked down one as far as I could To where it bent in the undergrowth; Then took the other, as just as fair, And having perhaps the better claim, Because it was grassy and wanted wear; Though as for that the passing there Had worn them really about the same, And both that morning equally lay In leaves no step had trodden black. Oh, I kept the first for another day! Yet knowing how way leads on to way,I doubted if I should ever come back.  I shall be telling this with a sigh Somewhere ages and ages hence: Two roads diverged in a wood, and I-I took the one less traveled by, And that has made all the difference."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.',
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.",
   video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }, {
-  name: 'LOREM IPSUM',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse.'
+  name: "LOREM IPSUM",
+  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minus similique architecto sequi delectus non, nobis consequuntur officia, laboriosam reiciendis ea! Natus iste quas perspiciatis magnam repellat, voluptate excepturi esse."
 }];
 exports.DATA = DATA;
 },{}],"components/Tabs.js":[function(require,module,exports) {
@@ -28569,7 +28569,6 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
   return Tabs;
 }(_react.default.Component);
 
-;
 var _default = Tabs;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js","./TabHeader":"components/TabHeader.js","./TabContents":"components/TabContents.js","../assets/tabsData":"assets/tabsData.js"}],"App.js":[function(require,module,exports) {
@@ -28587,7 +28586,7 @@ var App = function App() {
   return /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Tabs.default, null)));
 };
 
-(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById('root'));
+(0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById("root"));
 },{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./components/Tabs":"components/Tabs.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -28616,7 +28615,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50020" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50261" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

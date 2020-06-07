@@ -1,6 +1,6 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Tabs from './components/Tabs';
+import React from "react";
+import { render } from "react-dom";
+import Tabs from "./components/Tabs";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
         <Tabs />
       </>
     </React.StrictMode>
-  )
-}
+  );
+};
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
