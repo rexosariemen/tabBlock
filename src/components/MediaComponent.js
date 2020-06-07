@@ -18,7 +18,7 @@ export function ImageModal({ item, onClick }) {
 export function VideoComponent({ item }) {
   return (
     <>
-      <video width="310" height="240" controls>
+      <video width="320" height="240" controls>
         <source src={item.video} type="video/mp4"></source>
         Your browser does not support this video tag.
       </video>

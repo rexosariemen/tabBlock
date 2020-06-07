@@ -1,7 +1,8 @@
 import React from "react";
 import TabHeader from "./TabHeader";
 import TabContent from "./TabContents";
-import { DATA } from "../assets/tabsData";
+// import myJSON from "../assets/tabsData";
+import myJON from "../assets/tabsData";
 
 class Tabs extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class Tabs extends React.Component {
 
     this.state = {
       activeTab: 0,
-      data: DATA,
+      data: JSON.parse(myJON),
       modalView: false,
     };
   }

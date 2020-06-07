@@ -1,4 +1,4 @@
-export const DATA = [
+const DATA = [
   {
     name: "SONNET 36",
     text: [
@@ -83,3 +83,5 @@ export const DATA = [
     ],
   },
 ];
+const myJON = JSON.stringify(DATA);
+export default myJON;
