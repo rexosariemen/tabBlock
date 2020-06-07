@@ -62,17 +62,6 @@ imgage {
   cursor: pointer;
   }
 
-  .next:before {
-    content: '\232a';
-  }
-
-  .prev:before {
-    content: '\2329';
-  }
-
-  #tabs-header-text {
-    
-  }
 
   .tabs-header a:hover {
     background-color: #777;
@@ -111,7 +100,7 @@ imgage {
 }
 */
 .tabs-header a.active {
-  background: #2471A3;
+  background:grey;
 }
 
 .tabs-content {
@@ -119,7 +108,7 @@ imgage {
   position: relative;
   padding: 20px 25px;
   overflow: hidden;
-  background: #000;
+  background: whitesmoke
 }
 .tabs-content .tabs-textItem {
   display: none;
@@ -132,7 +121,7 @@ imgage {
 }
 .tabs-content .tabs-textItem p {
   font: normal 15px/1.5 'Open Sans';
-  color: #F2F3F4;
+  color: black
 }
 .tabs-content .tabs-textItem .image-item {
   cursor: pointer;
