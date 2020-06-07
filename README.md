@@ -1,7 +1,8 @@
 # tabBlock
 A Tab Block built with ReactJS rendering JSON
 
-Getting Started
+# Getting Started
 
-Run npm install
-Run npm run dev
+1. Clone this repo
+1. Run `npm install`
+1. Run `npm run dev`
