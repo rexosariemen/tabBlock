@@ -35,70 +35,37 @@ imgage {
 }
 
 .tabs-body {
-  /* short-hand border: 5px double red */
-  border-style: double;
-  border-width: 5px;
-  border-color: grey;
-  margin: 25px 25px;
-  }
+/* short-hand border: 5px double red */
+border-style: double;
+border-width: 5px;
+border-color: grey;
+margin: 25px 25px;
+}
 
   /* Handles the Tabsheader and horizontal scroll */
 
-  .tabs-header {
-    background-color: #333;
-    overflow: #333;
-    white-space: nowrap;
-  }
+.tabs-header {
+  background-color: #333;
+  overflow: #333;
+  white-space: nowrap;
+}
 
-  .tabs-header > a {
-    display: inline-block;
-    /* color: white; */
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-    display: table-cell;
+.tabs-header > a {
+  display: inline-block;
   text-align: center;
-  color: #ECF0F1;
-  cursor: pointer;
-  }
-
-
-  .tabs-header a:hover {
-    background-color: #777;
-  }
-
-/* .tabs-header {
-
-  display: table;
-  width: 92%;
-  list-style-type: none;
-  margin-right: auto;
-  margin-left: auto;
-} */
-
-/* .tabs-header li {
+  padding: 14px;
+  text-decoration: none;
   display: table-cell;
   text-align: center;
   color: #ECF0F1;
   cursor: pointer;
 }
 
-.tabs-header a {
-  display: block;
-  padding: 15px;
-  background: #212F3D;
-  transition: all .2s ease-in;
-  transform: skew(-40deg);
-}
-.tabs-header a span {
-  display: block; 
-  transform: skew(40deg);
-}
+
 .tabs-header a:hover {
-  background: #2471A3;
-  color: #F7F9F9;
+  background-color: #777;
 }
-*/
+
 .tabs-header a.active {
   background:grey;
 }
@@ -143,6 +110,7 @@ img {
     opacity: 1;
   }
 } */
+
 
 /* Image Modal Section */
 #myImg {

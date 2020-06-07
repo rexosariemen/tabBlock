@@ -5,9 +5,9 @@ import Tabs from './components/Tabs';
 const App = () => {
   return (
     <React.StrictMode>
-      <div>
+      <>
         <Tabs />
-      </div>
+      </>
     </React.StrictMode>
   )
 }

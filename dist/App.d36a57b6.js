@@ -28332,7 +28332,7 @@ var TabHeader = /*#__PURE__*/function (_React$Component) {
 
   _createClass(TabHeader, [{
     key: "doClick",
-    value: function doClick(index, event) {
+    value: function doClick(index) {
       this.props.click(index);
     }
   }, {
@@ -28359,11 +28359,6 @@ var TabHeader = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 var _default = TabHeader;
-/*
-back: &#8963;
-front: &#8250;
-*/
-
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"components/MediaComponent.js":[function(require,module,exports) {
 "use strict";
@@ -28379,10 +28374,10 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//Create image, imagemodal and video components
 function ImageComponent(_ref) {
   var item = _ref.item,
       onClick = _ref.onClick;
-  // const {item, onClick} = props;
   return /*#__PURE__*/_react.default.createElement("img", {
     onClick: onClick,
     id: "img-item",
@@ -28394,7 +28389,6 @@ function ImageComponent(_ref) {
 function ImageModal(_ref2) {
   var item = _ref2.item,
       onClick = _ref2.onClick;
-  // const { item, onClick } = props;
   return /*#__PURE__*/_react.default.createElement("div", {
     onClick: onClick,
     id: "myModal",
@@ -28415,7 +28409,7 @@ function VideoComponent(_ref3) {
   }, /*#__PURE__*/_react.default.createElement("source", {
     src: item.video,
     type: "video/mp4"
-  }), "Your browser does not support the video tag."));
+  }), "Your browser does not support this video tag."));
 }
 },{"react":"../node_modules/react/index.js"}],"components/TabContents.js":[function(require,module,exports) {
 "use strict";
@@ -28431,110 +28425,41 @@ var _MediaComponent = require("./MediaComponent");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-var TabContent = /*#__PURE__*/function (_React$Component) {
-  _inherits(TabContent, _React$Component);
-
-  var _super = _createSuper(TabContent);
-
-  function TabContent(props) {
-    var _this;
-
-    _classCallCheck(this, TabContent);
-
-    _this = _super.call(this, props);
-    _this.state = {// modalView: false,
-    };
-    return _this;
-  } // handleClick = () => {
-  //   this.setState({
-  //     modalView: !this.state.modalView,
-  //   })
-  // }
-
-
-  _createClass(TabContent, [{
-    key: "render",
-    value: function render() {
-      var activeClass = this.props.activeId; // let imageModal = this.props.imageModal;
-      // console.log(imageModal)
-
-      var handleClick = this.props.handleClick;
-      var modalView = this.props.modalView;
-      var view; // modalView ? <ImageModal onClick={this.handleClick} /> :
-      // <ImageComponent onClick={this.handleClick} />;
-
-      var content = this.props.data.map(function (item, index) {
-        if (item.image) {
-          // return (
-          // <div key={index}>
-          {
-            /* <div className={'tabs-textItem ' + (activeClass === index ? 'show' : '')} ><p>{item.text}</p></div> */
-          }
-          {
-            /* <span style={modalStyles} id="myModal" className="modal">
-                   <img src={item.image} className="modal-content" id="img01" />
-                 </span> */
-          }
-          {}
-          /* <img onClick={() => this.renderModal(item.image)} id="img-item" src={item.image} alt={item.name}/> */
-          // </div>
-          // <div className={'tabs-textItem ' + (activeClass === index ? 'show' : '')} >
-
-          return /*#__PURE__*/_react.default.createElement("div", {
-            key: index
-          }, modalView ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageModal, {
-            onClick: handleClick,
-            item: item
-          })) : /*#__PURE__*/_react.default.createElement("div", {
-            className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
-          }, /*#__PURE__*/_react.default.createElement("p", null, item.text, " ", /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
-            onClick: handleClick,
-            item: item
-          }))); // )
-        } else if (item.video) {
-          return /*#__PURE__*/_react.default.createElement("div", {
-            key: index,
-            className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
-          }, /*#__PURE__*/_react.default.createElement("p", null, item.text), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
-            item: item
-          }));
-        }
-
-        return /*#__PURE__*/_react.default.createElement("div", {
-          key: index,
-          className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
-        }, /*#__PURE__*/_react.default.createElement("p", null, item.text));
-      });
+function TabContent(props) {
+  var activeClass = props.activeId;
+  var handleClick = props.handleClick;
+  var modalView = props.modalView;
+  var content = props.data.map(function (item, index) {
+    if (item.image) {
       return /*#__PURE__*/_react.default.createElement("div", {
-        className: "tabs-content"
-      }, content);
+        key: index
+      }, modalView ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageModal, {
+        onClick: handleClick,
+        item: item
+      })) : /*#__PURE__*/_react.default.createElement("div", {
+        className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+      }, /*#__PURE__*/_react.default.createElement("p", null, item.text, " ", /*#__PURE__*/_react.default.createElement("br", null)), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
+        onClick: handleClick,
+        item: item
+      })));
+    } else if (item.video) {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        key: index,
+        className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+      }, /*#__PURE__*/_react.default.createElement("p", null, item.text), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
+        item: item
+      }));
     }
-  }]);
 
-  return TabContent;
-}(_react.default.Component);
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: index,
+      className: 'tabs-textItem ' + (activeClass === index ? 'show' : '')
+    }, /*#__PURE__*/_react.default.createElement("p", null, item.text));
+  });
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "tabs-content"
+  }, content);
+}
 
 var _default = TabContent;
 exports.default = _default;
@@ -28699,7 +28624,7 @@ var _Tabs = _interopRequireDefault(require("./components/Tabs"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_Tabs.default, null)));
+  return /*#__PURE__*/_react.default.createElement(_react.default.StrictMode, null, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Tabs.default, null)));
 };
 
 (0, _reactDom.render)( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById('root'));
