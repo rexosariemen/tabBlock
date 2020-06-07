@@ -1,7 +1,7 @@
 {
   "name": "tab_block",
   "version": "1.0.0",
-  "description": "A Tab block built in ReactJS",
+  "description": "A Tab block built with ReactJS",
   "main": "index.html",
   "scripts": {
     "dev": "parcel src/index.html",
