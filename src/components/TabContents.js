@@ -7,9 +7,9 @@ function TabContent(props) {
   const modalView = props.modalView;
 
   const content = props.data.map((item, index) => {
-    let textMarkup = "";
-    item.text.forEach((paragraph) => {
-      textMarkup += `<p>${paragraph}</p>`;
+    let textMarkup = [];
+    item.text.forEach((paragraph, i) => {
+      textMarkup.push(<p key={i}>{paragraph}</p>);
     });
     if (item.image) {
       return (
@@ -24,7 +24,7 @@ function TabContent(props) {
                 "tabs-textItem " + (activeClass === index ? "show" : "")
               }
             >
-              <div dangerouslySetInnerHTML={{ __html: textMarkup }} />
+              <div>{textMarkup}</div>
               <ImageComponent onClick={handleClick} item={item} />
             </div>
           )}
@@ -36,7 +36,7 @@ function TabContent(props) {
           key={index}
           className={"tabs-textItem " + (activeClass === index ? "show" : "")}
         >
-          <div dangerouslySetInnerHTML={{ __html: textMarkup }}></div>
+          <div>{textMarkup}</div>
           <VideoComponent item={item} />
         </div>
       );
@@ -46,7 +46,7 @@ function TabContent(props) {
         key={index}
         className={"tabs-textItem " + (activeClass === index ? "show" : "")}
       >
-        <p dangerouslySetInnerHTML={{ __html: textMarkup }}></p>
+        <>{textMarkup}</>
       </div>
     );
   });
