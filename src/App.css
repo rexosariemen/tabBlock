@@ -58,6 +58,7 @@ button {
   text-align: center;
   color: #ecf0f1;
   cursor: pointer;
+  border-style: solid;
 }
 
 .tabs-header a:hover {
