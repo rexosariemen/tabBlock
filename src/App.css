@@ -58,6 +58,7 @@ button {
   text-align: center;
   color: #ecf0f1;
   cursor: pointer;
+  border-style: solid;
 }
 
 .tabs-header a:hover {
@@ -102,17 +103,6 @@ video {
   max-width: 100%;
   height: auto;
 }
-
-/* @keyframes change {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-} */
 
 /* Image Modal Section */
 #myImg {
