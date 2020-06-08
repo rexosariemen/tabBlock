@@ -1,9 +1,8 @@
 import React from "react";
 import TabHeader from "./TabHeader";
 import TabContent from "./TabContents";
-// import myJSON from "../assets/tabsData";
 import { DATA } from "../assets/tabsData.json";
-console.log(DATA);
+
 class Tabs extends React.Component {
   constructor() {
     super();
