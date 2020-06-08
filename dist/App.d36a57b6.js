@@ -28445,8 +28445,9 @@ module.exports = {
   "DATA": [{
     "name": "SONNET 36",
     "text": ["Let me confess that we two must be twain, Although our undivided loves are one: So shall those blots that do with me remain, Without thy help, by me be borne alone. In our two loves there is but one respect, Though in our lives a separable spite Which though it alter not love's sole effect, Yet doth it steal sweet hours from love's delight.", "I may not evermore acknowledge thee, Lest my bewailed guilt should do thee shame"],
+    "image": "https://github.com/rexosariemen/tabBlock/blob/master/src/assets/media/coffee.jpg",
     "image1": "https://usercontent2.hubstatic.com/13610583_f1024.jpg",
-    "image": "https://studybay.com/netcat_files/55/144/dd8d5a899e8acb8b899f0e7cca5c0df4"
+    "image2": "https://studybay.com/netcat_files/55/144/dd8d5a899e8acb8b899f0e7cca5c0df4"
   }, {
     "name": "SONNET 90",
     "text": ["Then hate me when thou wilt; if ever, now; Now, while the world is bent my deeds to cross, Join with the spite of fortune, make me bow, And do not drop in for an after-loss: Ah! do not, when my heart hath 'scap'd this sorrow, Come in the rearward of a conquer'd woe;", "Give not a windy night a rainy morrow, To linger out a purpos'd overthrow. If thou wilt leave me, do not leave me last, When other petty griefs have done their spite"],
@@ -28526,8 +28527,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-console.log(_tabsData.DATA);
 
 var Tabs = /*#__PURE__*/function (_React$Component) {
   _inherits(Tabs, _React$Component);
