@@ -21,13 +21,12 @@ h1 {
   margin: 45px auto;
 }
 
-imgage {
-  max-width: 100%;
-  height: auto;
-  margin: 45px auto;
-  cursor: zoom-out;
+button {
+  position: fixed;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
 }
-
 .tabs-header {
   background-color: #333;
   overflow: auto;
@@ -70,7 +69,7 @@ imgage {
 }
 
 .tabs-content {
-  margin-top: 15px;
+  margin-top: 5px;
   position: relative;
   padding: 20px 25px;
   overflow: hidden;
@@ -119,7 +118,7 @@ video {
 #myImg {
   border-radius: 5px;
   cursor: zoom-in;
-  transition: 0.3s;
+  transition: 0.6s;
 }
 
 .modal {

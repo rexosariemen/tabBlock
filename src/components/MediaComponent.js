@@ -9,7 +9,7 @@ export function ImageComponent({ item, onClick }) {
 
 export function ImageModal({ item, onClick }) {
   return (
-    <div onClick={onClick} id="myModal" className="modal">
+    <div onClick={onClick} className="modal">
       <img src={item.image} alt={item.name} className="modal-content" />
     </div>
   );

@@ -28351,7 +28351,6 @@ function ImageModal(_ref2) {
       onClick = _ref2.onClick;
   return /*#__PURE__*/_react.default.createElement("div", {
     onClick: onClick,
-    id: "myModal",
     className: "modal"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: item.image,
@@ -28390,9 +28389,11 @@ function TabContent(props) {
   var handleClick = props.handleClick;
   var modalView = props.modalView;
   var content = props.data.map(function (item, index) {
-    var textMarkup = "";
-    item.text.forEach(function (paragraph) {
-      textMarkup += "<p>".concat(paragraph, "</p>");
+    var textMarkup = [];
+    item.text.forEach(function (paragraph, i) {
+      textMarkup.push( /*#__PURE__*/_react.default.createElement("p", {
+        key: i
+      }, paragraph));
     });
 
     if (item.image) {
@@ -28403,11 +28404,7 @@ function TabContent(props) {
         item: item
       })) : /*#__PURE__*/_react.default.createElement("div", {
         className: "tabs-textItem " + (activeClass === index ? "show" : "")
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        dangerouslySetInnerHTML: {
-          __html: textMarkup
-        }
-      }), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
+      }, /*#__PURE__*/_react.default.createElement("div", null, textMarkup), /*#__PURE__*/_react.default.createElement(_MediaComponent.ImageComponent, {
         onClick: handleClick,
         item: item
       })));
@@ -28415,11 +28412,7 @@ function TabContent(props) {
       return /*#__PURE__*/_react.default.createElement("div", {
         key: index,
         className: "tabs-textItem " + (activeClass === index ? "show" : "")
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        dangerouslySetInnerHTML: {
-          __html: textMarkup
-        }
-      }), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
+      }, /*#__PURE__*/_react.default.createElement("div", null, textMarkup), /*#__PURE__*/_react.default.createElement(_MediaComponent.VideoComponent, {
         item: item
       }));
     }
@@ -28427,11 +28420,7 @@ function TabContent(props) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: index,
       className: "tabs-textItem " + (activeClass === index ? "show" : "")
-    }, /*#__PURE__*/_react.default.createElement("p", {
-      dangerouslySetInnerHTML: {
-        __html: textMarkup
-      }
-    }));
+    }, /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, textMarkup));
   });
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "tabs-content"
@@ -28445,9 +28434,9 @@ module.exports = {
   "DATA": [{
     "name": "SONNET 36",
     "text": ["Let me confess that we two must be twain, Although our undivided loves are one: So shall those blots that do with me remain, Without thy help, by me be borne alone. In our two loves there is but one respect, Though in our lives a separable spite Which though it alter not love's sole effect, Yet doth it steal sweet hours from love's delight.", "I may not evermore acknowledge thee, Lest my bewailed guilt should do thee shame"],
-    "image1": "coffee.jpg",
-    "image": "https://usercontent2.hubstatic.com/13610583_f1024.jpg",
-    "image2": "https://studybay.com/netcat_files/55/144/dd8d5a899e8acb8b899f0e7cca5c0df4"
+    "image": "https://www.bl.uk/britishlibrary/~/media/bl/global/dl%20shakespeare/poetry%20by%20heart/poetrybyheart-crop.jpg",
+    "image3": "https://usercontent2.hubstatic.com/13610583_f1024.jpg",
+    "image1": "https://studybay.com/netcat_files/55/144/dd8d5a899e8acb8b899f0e7cca5c0df4"
   }, {
     "name": "SONNET 90",
     "text": ["Then hate me when thou wilt; if ever, now; Now, while the world is bent my deeds to cross, Join with the spite of fortune, make me bow, And do not drop in for an after-loss: Ah! do not, when my heart hath 'scap'd this sorrow, Come in the rearward of a conquer'd woe;", "Give not a windy night a rainy morrow, To linger out a purpos'd overthrow. If thou wilt leave me, do not leave me last, When other petty griefs have done their spite"],
@@ -28629,7 +28618,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57635" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51405" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
