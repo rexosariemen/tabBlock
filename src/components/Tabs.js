@@ -12,6 +12,28 @@ class Tabs extends React.Component {
       data: DATA,
       modalView: false,
     };
+    this.headerDiv = React.createRef();
+  }
+
+  // using fetch
+  componentDidMount() {
+    fetch(
+      "https://gist.githubusercontent.com/JWA111/a2545d6c7337461828b7fcbfc2fec76d/raw/381d0a5721fc7cabf86194e3d5b02ba4a089fa8d/mockServer.js"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const neededData = data.course.content[0].ids;
+        const result = [];
+        data.tabs.forEach((item) => {
+          if (neededData.includes(item.id)) {
+            result.push(item);
+          }
+        });
+        console.log(result);
+        this.setState({
+          // data: result, /* uncomment line to update state with fetched data */
+        });
+      });
   }
 
   changeTabOnClick = (index) => {
@@ -34,6 +56,7 @@ class Tabs extends React.Component {
             data={this.state.data}
             click={this.changeTabOnClick}
             activeId={this.state.activeTab}
+            headerDiv={this.headerDiv}
           />
         </div>
         <TabContent

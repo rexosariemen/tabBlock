@@ -21,18 +21,6 @@ h1 {
   margin: 45px auto;
 }
 
-button {
-  position: fixed;
-  z-index: 1;
-  width: 20px;
-  height: 20px;
-}
-.tabs-header {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-}
-
 .tabs-body {
   /* border: 5px double grey; */
   border-style: double;
@@ -45,8 +33,22 @@ button {
 
 .tabs-header {
   background-color: #333;
-  overflow: #333;
+  overflow: auto;
   white-space: nowrap;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  height: 3.5rem;
+  border-style: solid;
+  border-color: whitesmoke;
+  border-width: 4px;
+  background-color: rgb(107, 103, 103);
+  color: whitesmoke;
 }
 
 .tabs-header > a {

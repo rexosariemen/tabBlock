@@ -28303,6 +28303,15 @@ function TabHeader(props) {
   };
 
   var activeClass = props.activeId;
+
+  var handleNav = function handleNav(direction) {
+    if (direction === "left") {
+      props.headerDiv ? props.headerDiv.current.scrollLeft -= 200 : null;
+    } else {
+      props.headerDiv ? props.headerDiv.current.scrollLeft += 200 : null;
+    }
+  };
+
   var tabs = props.data.map(function (item, index) {
     return /*#__PURE__*/_react.default.createElement("a", {
       key: index,
@@ -28314,8 +28323,19 @@ function TabHeader(props) {
     }, /*#__PURE__*/_react.default.createElement("span", null, item.name)));
   });
   return /*#__PURE__*/_react.default.createElement("div", {
+    className: "header-container"
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick() {
+      return handleNav("left");
+    }
+  }, "prev")), /*#__PURE__*/_react.default.createElement("div", {
+    ref: props.headerDiv,
     className: "tabs-header"
-  }, tabs);
+  }, tabs), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick() {
+      return handleNav("right");
+    }
+  }, "next")));
 }
 
 var _default = TabHeader;
@@ -28546,10 +28566,33 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
       data: _tabsData.DATA,
       modalView: false
     };
+    _this.headerDiv = _react.default.createRef();
     return _this;
-  }
+  } // using fetch
+
 
   _createClass(Tabs, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch("https://gist.githubusercontent.com/JWA111/a2545d6c7337461828b7fcbfc2fec76d/raw/381d0a5721fc7cabf86194e3d5b02ba4a089fa8d/mockServer.js").then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        var neededData = data.course.content[0].ids;
+        var result = [];
+        data.tabs.forEach(function (item) {
+          if (neededData.includes(item.id)) {
+            result.push(item);
+          }
+        });
+        console.log(result);
+
+        _this2.setState({// data: result, /* uncomment line to update state with fetched data */
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", {
@@ -28559,7 +28602,8 @@ var Tabs = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement(_TabHeader.default, {
         data: this.state.data,
         click: this.changeTabOnClick,
-        activeId: this.state.activeTab
+        activeId: this.state.activeTab,
+        headerDiv: this.headerDiv
       })), /*#__PURE__*/_react.default.createElement(_TabContents.default, {
         data: this.state.data,
         activeId: this.state.activeTab,
@@ -28618,7 +28662,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51405" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49975" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
