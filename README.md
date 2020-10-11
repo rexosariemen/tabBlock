@@ -8,5 +8,4 @@ A Tab Block built with ReactJS rendering JSON
 1. Run `npm run dev`
 <a href="https://cdna.artstation.com/p/assets/images/images/009/838/868/large/anna-emelyanova-bottle-3.jpg?1521148475">Image</a>
 
-
-<img src="https://cdna.artstation.com/p/assets/images/images/009/838/868/large/anna-emelyanova-bottle-3.jpg?1521148475">Image</img>
+<img height=100 alt="" src="https://cdna.artstation.com/p/assets/images/images/009/838/868/large/anna-emelyanova-bottle-3.jpg?1521148475">Image</img>
