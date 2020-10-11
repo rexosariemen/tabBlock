@@ -7,5 +7,5 @@
 1. Run `npm run dev`
 
 
-- [React] <a href="https://github.com/facebook/react"></a>
+- <a href="https://github.com/facebook/react">React</a>
 - [express] (https://github.com/expressjs/express)
