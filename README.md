@@ -9,3 +9,6 @@
 
 - <a href="https://github.com/facebook/react">React</a>
 - [express] (https://github.com/expressjs/express)
+
+
+The Application is deployed on Heroku as [magicpotionsite] <a href="https://magicpotionsite.herokuapp.com/">magicpotionsite</a>
