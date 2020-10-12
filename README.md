@@ -29,6 +29,7 @@ The Application is deployed on Heroku as [magicpotionsite] <a href="https://magi
 # <a href="https://magicpotionsite.herokuapp.com/" target="_blank">Curology Magic Potion Launch Site</a>
 #### This is the order page for the new curology skin care product
 <img width=400 alt="" src="./client/public/curology.png" />
+
 ## Getting Started
 ### On the Browser
 The Application is deployed on Heroku as <a href="https://magicpotionsite.herokuapp.com/">magicpotionsite.</a>
