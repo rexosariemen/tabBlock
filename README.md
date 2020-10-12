@@ -27,9 +27,7 @@ The Application is deployed on Heroku as [magicpotionsite] <a href="https://magi
 
 
 # <a href="https://magicpotionsite.herokuapp.com/" target="_blank">Curology Magic Potion Launch Site</a>
-#### This is the order page for the new curology skin care product
-<img width=400 alt="" src="./client/public/curology.png" />
-
+### This is the order page for the new curology skin care product
 ## Getting Started
 ### On the Browser
 The Application is deployed on Heroku as <a href="https://magicpotionsite.herokuapp.com/">magicpotionsite.</a>
@@ -39,10 +37,10 @@ traffic. Thus, there will be a short delay before the web dyno is active on the 
 
 ### On your Local Machine
 To run the application on your local machine: 
-1. Clone the repository (` https://github.com/rexosariemen/magicpotionsite.git` ) and install the dependencies
-2. Run `npm install` to install dependencies for the server
-3. Run `cd client && npm install` to install dependencies for client
-4. Run `npm run dev` from the root directory to start both the server and client.
+- <a href="https://github.com/rexosariemen/magicpotionsite.git">Clone the repository</a>
+- Run `npm install` to install dependencies for the server
+- Run `cd client && npm install` to install dependencies for client
+- Run `npm run dev` from the root directory to start both the server and client.
 
 The client will be running on localhost `3000` and the server on `5500`
 
@@ -64,11 +62,11 @@ validation function is invoked to provide prompts to the user if the information
 provided is invalid or incomplete.
 
 ## API Architecture
-RESTful API is implemented. This is to allow for handling multiple types of  calls, handling different data formats and even change structurally depending on future needs of the application. 
+RESTful API is implemented. This is to allow for handling multiple types of  calls, handling different data formats and structural change depending on future needs of the application. 
 
-The application have Endpoints for post, get, patch and delete. The current UI only
+The application has endpoints for `post`, `get`, `patch` and `delete`. The current UI only
 has access to the post `./magic` endpoint.
-#### POST /magic Endpoint
+#### POST `/magic` Endpoint
 This endpoint adds new order to the DB. Before adding the order, the checkOrder 
 route middleware checks that the same user (using the email to check duplicates)
 is not making an order of more than 3 potions for a given month. If a user's
@@ -81,15 +79,14 @@ given order is 1. However, for any order that makes the total (previous and curr
 orders exceeds 3, it is rejected and not saved to the DB.
 When post req is successful, the user receives a notification to this effect and 
 the server responds with the uid of the order and a CREATED (201) status.
-#### GET /magic/uid Endpoint
-This endpoint retrieves the order with the given uid with an OK (200) status on success.
-
+#### GET `/magic/uid` Endpoint
+This endpoint retrieves the order for the given uid with an OK (200) status on success.
 NOT FOUND (404) on failure
-#### PATCH /magic/uid Endpoint
-This updates an existing order with the given uid and respond with the 
+#### PATCH `/magic/uid` Endpoint
+This updates an existing order for the given uid and respond with the 
 uid and the fulfilled column on success. And a NOT FOUND (404) on failure
-#### DELETE /magic/uid Endpoint
-The delete endpoint deletes the order of the uid given with a resource deleted 
+#### DELETE `/magic/uid` Endpoint
+The delete endpoint deletes the order for the uid given with a resource deleted 
 successfully response on success and NOT FOUND (404) on failure
 
 ## Data Schema
@@ -98,11 +95,11 @@ flexibility in data structure definition along with making the mongodb interacti
 simple. 
 
 In addition to defining the structure and default values for the document, the schema
-was used to enforce validation for all fields except the street2. This was to ensure
+was used to enforce validation for all fields except the street2 column. This was to ensure
 that all fields are properly filled to process client orders.
 #### On Scaling
 As the number of order increases, more computing power will be needed to process 
-previous orders - in order to avoid duplicates before accepting new ones - As the 
+previous orders - in order to avoid duplicates before accepting new ones - as the 
 current design requires. This presents a pitfall as an inefficiently-designed 
 aggregation for the database, in addition to over-use of indices. <br />
 To efficiently scale, first have to remove the potential of running through every 
